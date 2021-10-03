@@ -1,13 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/style.css">
-  <title>WPU Blog | Posts</title>
-</head>
-<body>
-  <h1>Halaman Posts</h1>
-</body>
-</html>
+@extends('layouts.main')
+
+@section('container')
+<h1>Halaman Blog</h1>
+@foreach ($posts as $post)
+<div class="card mb-4" style="width: 18rem;">
+    <div class="card-body">
+        <h2 class="card-title">
+            {{ $post['title'] }}
+        </h2>
+        <h6 class="card-subtitle mb-2 text-muted">
+            By: {{ $post['author'] }}
+        </h6>
+        <p class="card-text">{{ $post['body'] }}</p>
+        <a href="/posts/{{ $post['slug'] }}" class="card-link btn btn-outline-dark">Selengkapnya
+        </a>
+    </div>
+</div>
+@endforeach
+@endsection
