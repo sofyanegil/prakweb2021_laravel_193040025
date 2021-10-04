@@ -1,10 +1,10 @@
 @extends('layouts.main')
 
 @section('container')
-<h1>Halaman Blog</h1>
+<h1 class="text-center mb-4">Halaman Blog</h1>
 @foreach ($posts as $post)
-<div class="card mb-4" style="width: 18rem;">
-    <div class="card-body">
+<div class="card mb-4 mx-auto" style="width: 18rem;">
+    <div class="card-body ">
         <h2 class="card-title">
             {{ $post['title'] }}
         </h2>

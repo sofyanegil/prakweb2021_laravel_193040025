@@ -7,13 +7,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
+                <li class="nav-item mx-2">
                     <a class="nav-link {{ $title === 'Home' ? 'active' : '' }}" href="/">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mx-2">
                     <a class="nav-link {{ $title === 'Posts' ? 'active' : '' }}" href="/blog">Blog</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mx-2">
                     <a class="nav-link {{ $title === 'About' ? 'active' : '' }}" href="/about">About</a>
                 </li>
             </ul>
