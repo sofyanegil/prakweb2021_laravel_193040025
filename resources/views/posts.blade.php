@@ -6,14 +6,21 @@
     @foreach ($posts as $post)
     <div class="card mb-4 mx-auto" style="width: 18rem;">
         <div class="card-body ">
-            <h2 class="card-title">
-                {{ $post->title }}
-            </h2>
+            <a href="/posts/{{ $post->slug }}" class="card-link text-decoration-none text-dark">
+                <h2 class="card-title">
+                    {{ $post->title }}
+
+                </h2>
+
+            </a>
+
             <h6 class="card-subtitle mb-2 text-muted">
                 {{-- By: {{ $post['author'] }} --}}
+                <p>In <a class="text-primary text-decoration-none" href="/categories/{{ $post->category->slug }}">
+                        {{ $post->category->name }}</a></p>
             </h6>
             <p class="card-text">{!! Str::limit($post->body, 200, '...') !!}</p>
-            <a href="/posts/{{ $post->slug }}" class="card-link btn btn-outline-dark">Selengkapnya
+            <a href="/posts/{{ $post->slug }}" class="card-link btn btn-outline-dark">Read More
             </a>
         </div>
     </div>
