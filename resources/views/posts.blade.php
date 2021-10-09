@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<h1 class="text-center mb-4">Halaman Blog Posts</h1>
+<h1 class="text-center mb-4">Halaman Blog {{ $title }}</h1>
 
 <article class="d-f row mb-5 justify-content-around">
     @foreach ($posts as $post)
@@ -13,7 +13,8 @@
                 </h2>
             </a>
             <h6 class="card-subtitle mb-2 text-muted">
-                By: <a href="" class="text-decoration-none">{{ Str::limit($post->user->name, 15, '...') }}</a>
+                By: <a href="/authors/{{ $post->author->username }}"
+                    class="text-decoration-none">{{ Str::limit($post->author->name, 15, '...') }}</a>
                 <p>In
                     <a class="text-primary text-decoration-none" href="/categories/{{ $post->category->slug }}">
                         {{ $post->category->name }}

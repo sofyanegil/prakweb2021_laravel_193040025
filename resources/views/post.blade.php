@@ -15,7 +15,8 @@
     </ol>
 </nav>
 <h1 class="text-center">{{ $post->title }}</h1>
-<p class="text-secondary text-center">By : <a href="" class="text-decoration-none">{{ $post->user->name }}</a> </p>
+<p class="text-secondary text-center">By : <a href="/authors/{{ $post->author->username }}"
+        class="text-decoration-none">{{ $post->author->name }}</a> </p>
 <p class="text-secondary text-center
 ">In <a class="text-primary text-decoration-none" href="/categories/{{ $post->category->slug }}">
         {{ $post->category->name }}</a>
@@ -24,5 +25,5 @@
 <div class="container">
     {!! $post->body !!}
 </div>
-<a href="/blog" class="btn btn-primary mt-5 ml-auto">Back to Posts</a>
+<a href="/blog" class="btn btn-primary mt-5 ml-auto mb-5 w-100">Back to Posts</a>
 @endsection
