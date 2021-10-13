@@ -37,6 +37,21 @@ class DatabaseSeeder extends Seeder
             'slug' => 'personal'
         ]);
 
+        Category::create([
+            'name' => 'Gaming',
+            'slug' => 'gaming'
+        ]);
+
+        Category::create([
+            'name' => 'Web Design',
+            'slug' => 'web-design'
+        ]);
+
+        Category::create([
+            'name' => 'UI / UX',
+            'slug' => 'ui-ux'
+        ]);
+
         Post::factory(25)->create();
     }
 }

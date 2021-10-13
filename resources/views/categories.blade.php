@@ -2,19 +2,26 @@
 
 @section('container')
 <h1 class="text-center mb-4">Post Categories</h1>
-@foreach ($categories as $category)
-<ul class="list-group row-cols-lg-2 ">
-  <li class="list-group-item d-flex justify-content-between align-items-center mb-2 mx-lg-auto">
-    <h2 class="fw-bold">{{ $category->name }}</h2>
-    <a href="/categories/{{ $category->slug }}" class="card-link  ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-        class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
-        <path
-          d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z" />
-      </svg>
-    </a>
-  </li>
-</ul>
-@endforeach
 
+<div class="container">
+  <div class="row justify-content-center">
+    @foreach ($categories as $category)
+    <div class="col-md-4  mb-4">
+      <a href="/categories/{{ $category->slug }}" class="card-link  ">
+        <div class="card bg-dark text-white">
+
+          <img src="https://source.unsplash.com/500x500?{{ $category->name }}" class="img-fluid mx-auto"
+            alt="{{ $category->name }}">
+          <div class="card-img-overlay d-flex align-items-center p-0
+        ">
+            <h5 class="card-title text-center flex-fill p-4 fs-3" style="background-color: rgba(0, 0, 0, 0.7)">{{
+              $category->name
+              }}</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    @endforeach
+  </div>
+</div>
 @endsection
