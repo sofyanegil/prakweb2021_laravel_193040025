@@ -6,7 +6,7 @@
 <ul class="list-group row-cols-lg-2 ">
   <li class="list-group-item d-flex justify-content-between align-items-center mb-2 mx-lg-auto">
     <h2 class="fw-bold">{{ $user->name }}</h2>
-    <a href="/authors/{{ $user->username }}" class="card-link  ">
+    <a href="/posts?author={{ $user->username }}" class="card-link  ">
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
         class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
         <path
