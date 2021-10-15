@@ -3,6 +3,10 @@
     object-fit: cover;
     object-position: center;
   }
+
+  body {
+    overflow-y: hidden
+  }
 </style>
 @extends('layouts.main')
 
@@ -19,21 +23,21 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
-      <img src="https://source.unsplash.com/random/800x600" class="d-block w-100 h-100" alt="...">
+      <img src="https://source.unsplash.com/random/1200x600?Code" class="d-block w-100 h-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="https://source.unsplash.com/random/800x600" class="d-block w-100 h-100" alt="...">
+      <img src="https://source.unsplash.com/random/1200x600?Playstation" class="d-block w-100 h-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://source.unsplash.com/random/800x600" class="d-block w-100 h-100" alt="...">
+      <img src="https://source.unsplash.com/random/1200x600?Baseball" class="d-block w-100 h-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>
