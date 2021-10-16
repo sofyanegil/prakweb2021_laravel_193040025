@@ -53,5 +53,5 @@
   left: 80vw;" id="btn-back-to-top">
     <i class="bi bi-arrow-up-circle-fill"></i>
 </button>
-<script src="../js/btt.js"></script>
+<script src="/js/btt.js"></script>
 @endsection
