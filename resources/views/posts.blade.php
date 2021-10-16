@@ -44,7 +44,7 @@
                 {{ $posts[0]->created_at->diffForHumans() }}
             </small>
         </p>
-        <p class="card-text">{!! Str::limit($posts[0]->body, 200, '...') !!}
+        <p class="card-text">{!! Str::limit($posts[0]->body, 350, '...') !!}
         </p>
         <a href="/posts/{{ $posts[0]->slug }}" class="card-link btn btn-outline-primary w-20">Read More
         </a>
@@ -78,7 +78,7 @@
                             {{ $post->created_at->diffForHumans() }}
                         </small>
                     </p>
-                    <p class="card-text">{!! Str::limit($post->body, 200, '...') !!}</p>
+                    <p class="card-text">{!! Str::limit($post->body, 150, '...') !!}</p>
                     <a href="/posts/{{ $post->slug }}" class="card-link btn btn-outline-primary w-100">Read More
                     </a>
                 </div>
