@@ -24,4 +24,10 @@
     <a href="javascript:history.back()" class="btn btn-primary mt-5 ml-auto mb-5 w-100">Back to Posts</a>
   </div>
 </div>
+
+<button type="button" class=" mx-5 d btn btn-secondary fixed-bottom btn-floating btn-lg mx-auto" style="bottom: 5vh;
+       left: 80vw;" id="btn-back-to-top">
+  <span data-feather="arrow-up-circle" style="width:">
+</button>
+<script src="/js/btt.js"></script>
 @endsection
