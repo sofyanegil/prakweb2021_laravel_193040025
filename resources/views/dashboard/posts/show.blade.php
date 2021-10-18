@@ -21,7 +21,6 @@
     </article>
 
     {{-- Akhir Content --}}
-    <a href="javascript:history.back()" class="btn btn-primary mt-5 ml-auto mb-5 w-100">Back to Posts</a>
   </div>
 </div>
 

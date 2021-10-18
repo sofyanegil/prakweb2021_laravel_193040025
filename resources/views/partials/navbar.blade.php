@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="../img/logo.png" width="25vh" alt="" class="my-auto mb-1"> WPU Blog
+            <img src="/img/logo.png" width="25vh" alt="" class="my-auto mb-1"> WPU Blog
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
