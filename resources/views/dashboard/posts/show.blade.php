@@ -4,15 +4,23 @@
 <div class="row my-3 px-2 ">
   <div class="col-lg-8">
     {{-- Content --}}
-    <h1 class="text-center">{{ $post->title }}</h1>
-    <div class="row justify-content-center">
-      <div class="col-lg-6 mx-auto">
-        <a href="/dashboard/posts" class="btn btn-success"> <span data-feather="arrow-left"></span> To all my post</a>
-        <a href="" class="btn btn-warning"> <span data-feather="edit"></span> Edit</a>
-        <a href="" class="btn btn-danger"> <span data-feather="x-circle"></span>Delete</a>
+    <div class="row mt-2 mb-2 mx-sm-auto  ">
+      <div class="col-lg-6 ms-0 col-sm-12 ">
+        <a href="/dashboard/posts" class="btn btn-secondary"> <span data-feather="arrow-left-circle"></span> To all my
+          post</a>
+        <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning text-white"> <span
+            data-feather="edit"></span>
+          Edit</a>
+        <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class="d-inline">
+          @method('delete')
+          @csrf
+          <button class="btn btn-danger" onclick="return confirm('Are You Sure?')"><span
+              data-feather="x-circle"></span>Delete</button>
+        </form>
       </div>
-
     </div>
+
+    <h1 class="text-center">{{ $post->title }}</h1>
     <img src="https://source.unsplash.com/1200x600?{{ $post->category->name }}" class="img-fluid mt-3 mx-auto"
       alt="...">
 

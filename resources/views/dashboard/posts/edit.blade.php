@@ -2,16 +2,17 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Create New Post</h1>
+  <h1 class="h2">Edit Post</h1>
 </div>
 
 <div class="col-lg-8">
-  <form method="post" action="/dashboard/posts" class="mb-5">
+  <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5">
+    @method('put')
     @csrf
     <div class="mb-3">
       <label for="title" class="form-label ">Title</label>
       <input type=" text" class="form-control @error('title') is-invalid  @enderror " id="title" name="title"
-        value="{{old('title')}}" autofocus>
+        value="{{old('title',$post->title) }}" autofocus>
       @error('title')
       <div class="invalid-feedback">
         {{ $message }}
@@ -22,7 +23,7 @@
     <div class="mb-3">
       <label for="slug" class="form-label">Slug</label>
       <input type="text" class="form-control @error('slug') is-invalid  @enderror" id="slug" name="slug"
-        value="{{ old('slug')}}">
+        value="{{ old('slug', $post->slug)}}">
       @error('slug')
       <div class=" invalid-feedback">
         {{ $message }}
@@ -36,7 +37,7 @@
       <select class="form-select" name="category_id" id="category">
         <option disabled selected>---Select Category---</option>
         @foreach ($categories as $category)
-        @if ( $category->id == old('category_id'))
+        @if ( $category->id == old('category_id', $post->category_id))
         <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
         @else
         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -47,14 +48,13 @@
 
     <div class="mb-3">
       <label for="body" class="form-label">Body</label>
-      <input id="body" type="hidden" name="body" value="{{ old('body') }}">
+      <input id="body" type="hidden" name="body" value="{{ old('body', $post->body) }}">
       @error('body')
       <p class="text-danger">{{ $message }}</p>
       @enderror
       <trix-editor input="body"></trix-editor>
     </div>
-    <button type="submit" class="btn btn-primary d-block mx-auto"> <span data-feather="plus-circle"></span> Create
-      Post</button>
+    <button type="submit" class="btn btn-primary d-block mx-auto"><span data-feather="save"></span> Update Post</button>
   </form>
 </div>
 

@@ -21,7 +21,10 @@
         </ol>
     </nav>
     {{-- akhir breadcumb --}}
-    <div class="col-md-8">
+    <div class="col-md-8 bg-light pt-3">
+        <a href="javascript:history.back()" class="btn btn-primary text-small my-2">
+            <i class="bi bi-arrow-left-circle"></i> Back
+        </a>
         {{-- Content --}}
         <h1 class="text-center">{{ $post->title }}</h1>
         <p class="text-center">
@@ -45,7 +48,7 @@
         </article>
 
         {{-- Akhir Content --}}
-        <a href="javascript:history.back()" class="btn btn-primary mt-5 ml-auto mb-5 w-100">Back to Posts</a>
+
     </div>
 </div>
 <button type="button" class=" mx-5 justify-content-end btn btn-secondary fixed-bottom btn-floating btn-lg mx-auto"

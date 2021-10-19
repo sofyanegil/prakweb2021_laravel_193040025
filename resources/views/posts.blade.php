@@ -44,9 +44,10 @@
                 {{ $posts[0]->created_at->diffForHumans() }}
             </small>
         </p>
-        <p class="card-text">{!! Str::limit($posts[0]->body, 350, '...') !!}
+        <p class="card-text">{!! $posts[0]->excerpt !!}
         </p>
-        <a href="/posts/{{ $posts[0]->slug }}" class="card-link btn btn-outline-primary w-20">Read More
+        <a href="/posts/{{ $posts[0]->slug }}" class="card-link btn btn-outline-primary w-20"><i
+                class="bi bi-newspaper"></i> Read More
         </a>
     </div>
 </div>
@@ -78,8 +79,9 @@
                             {{ $post->created_at->diffForHumans() }}
                         </small>
                     </p>
-                    <p class="card-text">{!! Str::limit($post->body, 150, '...') !!}</p>
-                    <a href="/posts/{{ $post->slug }}" class="card-link btn btn-outline-primary w-100">Read More
+                    <p class="card-text">{!! $post->excerpt !!}</p>
+                    <a href="/posts/{{ $post->slug }}" class="card-link btn btn-outline-primary w-100"><i
+                            class="bi bi-newspaper"></i> Read More
                     </a>
                 </div>
             </div>
