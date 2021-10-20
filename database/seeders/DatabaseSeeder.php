@@ -22,10 +22,10 @@ class DatabaseSeeder extends Seeder
             'name' => "Sofyan Egi",
             'username' => 'sofyanegi',
             'email' => "sofyanegil@gmail.com",
-            'password' => bcrypt('Sofyanegi123')
+            'password' => bcrypt('adminadmin')
         ]);
 
-        User::factory(5)->create();
+        User::factory(4)->create();
 
         Category::create([
             'name' => 'Web Programming',

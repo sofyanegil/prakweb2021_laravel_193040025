@@ -21,8 +21,15 @@
     </div>
 
     <h1 class="text-center">{{ $post->title }}</h1>
-    <img src="https://source.unsplash.com/1200x600?{{ $post->category->name }}" class="img-fluid mt-3 mx-auto"
-      alt="...">
+
+    @if ($post->image)
+    <div class="d-flex justify-content-center" style="max-height: 400px; oveflow:hidden">
+      <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid mt-3 mx-auto" alt="...">
+    </div>
+    @else
+    <img src="https://source.unsplash.com/600x300?{{ $post->category->name }}"
+      class="d-flex justify-content-center img-fluid mt-3 mx-auto" alt="...">
+    @endif
 
     <article class=" fs-5 py-4" style="text-align:justify">
       {!! $post->body !!}
