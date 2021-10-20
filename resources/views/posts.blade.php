@@ -26,10 +26,10 @@
 
     @if ($posts[0]->image)
     <div class="d-flex justify-content-center" style="max-height: 400px; overflow:hidden;">
-        <img src="{{ asset('storage/' . $posts[0]->image) }}" class="card-img-top" alt="...">
+        <img src="{{ asset('storage/' . $posts[0]->image) }}" class="img-fluid" alt="...">
     </div>
     @else
-    <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top"
+    <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="img-fluid"
         alt="{{ $posts[0]->category->name }}">
     @endif
 

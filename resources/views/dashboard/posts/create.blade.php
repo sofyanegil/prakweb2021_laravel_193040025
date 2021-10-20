@@ -33,7 +33,7 @@
 
     <div class="mb-3">
       <label for="category" class="form-label">Category</label>
-      <select class="form-select" name="category_id" id="category">
+      <select class="form-select @error('category_id') is-invalid  @enderror" name="category_id" id="category">
         <option disabled selected>---Select Category---</option>
         @foreach ($categories as $category)
         @if ( $category->id == old('category_id'))
@@ -43,11 +43,18 @@
         @endif
         @endforeach
       </select>
+      @error('category_id')
+      <div class=" invalid-feedback">
+        {{ $message }}
+      </div>
+      @enderror
     </div>
 
     <div class="mb-3">
-      <label for="image" class="form-label @error('image') is-invalid  @enderror ">Upload Image</label>
-      <input class="form-control" type="file" id="image" name="image">
+      <label for="image" class="form-label">Upload Image</label>
+      <input class="form-control @error ('image') is-invalid @enderror" type="file" id="image" name="image"
+        onchange="previewImage()">
+      <img class="img-preview img-fluid my-3 col-sm-5">
       @error('image')
       <div class=" invalid-feedback">
         {{ $message }}
@@ -84,6 +91,21 @@
   document.addEventListener('trix-file-accept', function (e) {
     e.preventDefault();
   })
+
+  // Preview Image
+ function previewImage() {
+     const image = document.querySelector('#image');
+    const imgPreview = document.querySelector('.img-preview')
+    
+    imgPreview.style.display = 'block';
+    
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+    
+    oFReader.onload = function(oFREvent) {
+    imgPreview.src = oFREvent.target.result;
+    }
+ }
 </script>
 
 @endsection
