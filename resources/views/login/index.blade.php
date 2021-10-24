@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="row justify-content-center mt-5">
+<div class="row justify-content-center mt-4" style="min-height: 68vh">
   <div class="col-lg-4">
 
     @if(session('success'))
@@ -41,7 +41,7 @@
           Not Register? <a href="/register">Register Now!</a>
         </small>
       </form>
-      <p class="mt-2 mb-3 text-muted text-center">&copy; WPU Blog, 2021</p>
+      <p class="mt-2 mb-3 text-muted text-center">&copy; Blogarithm, 2021</p>
     </main>
   </div>
 </div>

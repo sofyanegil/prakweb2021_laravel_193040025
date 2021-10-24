@@ -14,8 +14,13 @@
 @endif
 
 <div class="table-responsive col-lg-6">
+  <div class="alert alert-danger  alert-dismissible fade show" role="alert">
+    Delete Category make all posts in that category will be delete
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
   <a href="/dashboard/categories/create" class="btn btn-success my-3"> <span data-feather="plus-circle"></span> Add new
     category</a>
+
   <table class="table table-striped table-sm">
     <thead class="bg-dark text-white text-center">
       <tr>
@@ -31,16 +36,17 @@
         <td>{{ $category->name }}</td>
         <td>
           <div class=" row-cols-sm-9 row-cols-lg-4 d-flex justify-content-center">
-            <a href="/dashboard/categories/{{ $category->slug }}" class="mx-0 badge bg-info my-2 me-1"> <span
-                data-feather="eye"></span></a>
-            <a href="/dashboard/categories/{{ $category->slug }}/edit" class="mx-0 badge bg-warning my-2 me-1"><span
+            <a href="/dashboard/categories/{{ $category->id }}/edit" class="mx-0 badge bg-warning my-2 me-1"><span
                 data-feather="edit"></span></a>
-            <form action="/dashboard/categories/{{ $category->slug }}" method="POST" class="d-inline">
+
+            <form action="/dashboard/categories/{{ $category->id }}" method="post" class="d-inline">
               @method('delete')
               @csrf
-              <button class=" mx-0 badge bg-danger border-0 w-100 my-2" onclick="return confirm('Are You Sure?')"><span
+              <button class=" mx-0 badge bg-danger border-0 w-100 my-2"
+                onclick="return confirm('Are You Sure? All Post in this Category will be Delete')"><span
                   data-feather="x-circle"></span></button>
             </form>
+
           </div>
         </td>
       </tr>
@@ -48,4 +54,5 @@
     </tbody>
   </table>
 </div>
+
 @endsection

@@ -17,42 +17,63 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->seedAdmin();
+        $this->seedCategory();
+        $this->seedUser(9);
+        $this->seedPost(50);
+    }
 
+    public function seedAdmin()
+    {
         User::create([
-            'name' => "Sofyan Egi",
+            'name' => "Sofyan Egi Lesmana",
             'username' => 'sofyanegi',
             'is_admin' => true,
             'email' => "sofyanegil@gmail.com",
             'password' => bcrypt('adminadmin')
         ]);
+    }
 
-        User::factory(4)->create();
-
+    public function seedCategory()
+    {
         Category::create([
             'name' => 'Web Programming',
             'slug' => 'web-programming'
         ]);
 
         Category::create([
+            'name' => 'Data Science',
+            'slug' => 'data-science'
+        ]);
+
+        Category::create([
+            'name' => 'Mobile Programming',
+            'slug' => 'mobile-programming'
+        ]);
+
+        Category::create([
+            'name' => 'Cloud Computing',
+            'slug' => 'cloud-computing'
+        ]);
+
+        Category::create([
+            'name' => 'Machine Learning',
+            'slug' => 'machine-learning'
+        ]);
+
+        Category::create([
             'name' => 'Personal',
             'slug' => 'personal'
         ]);
+    }
 
-        Category::create([
-            'name' => 'Gaming',
-            'slug' => 'gaming'
-        ]);
+    public function seedUser($qty)
+    {
+        User::factory($qty)->create();
+    }
 
-        Category::create([
-            'name' => 'Web Design',
-            'slug' => 'web-design'
-        ]);
-
-        Category::create([
-            'name' => 'UI / UX',
-            'slug' => 'ui-ux'
-        ]);
-
-        Post::factory(25)->create();
+    public function seedPost($qty)
+    {
+        Post::factory($qty)->create();
     }
 }

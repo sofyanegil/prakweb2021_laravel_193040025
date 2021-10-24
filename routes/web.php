@@ -31,9 +31,7 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about', [
         "title" => "About",
-        "name" => "Sofyan Egi Lesmana",
-        "email" => "contact.sofyanegi@gmail.com",
-        "image" => "pp.jpg"
+        "users" => User::all(),
     ]);
 });
 
@@ -43,7 +41,7 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/categories', function () {
     return view('categories', [
-        'title' => 'Post Categories',
+        'title' => 'Categories',
         'categories' => Category::all()
     ]);
 });

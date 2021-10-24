@@ -3,6 +3,7 @@
 @section('container')
 <h1 class="text-center mb-4">{{ $title }}</h1>
 
+{{-- Serch --}}
 <div class="row justify-content-center mb-4">
     <div class="col-md-6">
         <form action="/posts">
@@ -21,6 +22,7 @@
     </div>
 </div>
 
+{{-- Posts --}}
 @if ($posts->count())
 <div class="card mx-auto w-auto">
 
@@ -29,7 +31,7 @@
         <img src="{{ asset('storage/' . $posts[0]->image) }}" class="img-fluid" alt="...">
     </div>
     @else
-    <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="img-fluid"
+    <img src="https://source.unsplash.com/800x200?{{ $posts[0]->category->name }}" class="img-fluid"
         alt="{{ $posts[0]->category->name }}">
     @endif
 
@@ -43,7 +45,7 @@
             <small class="mb-2 text-muted">
                 By:
                 <a href="/posts?author={{ $posts[0]->author->username }}" class="text-decoration-none">
-                    {{Str::limit($posts[0]->author->name, 15, '...') }}
+                    {{$posts[0]->author->name }}
                 </a>
                 In
                 <a class="text-primary text-decoration-none" href="/posts?category={{ $posts[0]->category->slug }}">
@@ -89,7 +91,7 @@
                         <small class="mb-2 text-muted">
                             By:
                             <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none">
-                                {{Str::limit($post->author->name, 15, '...') }}
+                                {{Str::limit($post->author->name, 25, '..') }}
                             </a>
                             {{ $post->created_at->diffForHumans() }}
                         </small>
@@ -105,12 +107,13 @@
     </div>
 </div>
 @else
-<div class="alert alert-warning col-6 mx-auto d-flex align-items-center " role="alert">
-    <h1 class="text-center fs-1 flex-fill p-4 fs-3">No Post Found</h1>
+{{-- No Post --}}
+<div class="alert alert-warning col-sm-6 mx-auto align-items-center h-100 d-flex" role="alert">
+    <h1 class="text-center fs-1 flex-fill fs-3 align-self-auto">No Post Found</h1>
 </div>
-{{-- Pagination --}}
 @endif
-<div class="p-5 container d-flex justify-content-center">
+{{-- Pagination --}}
+<div class="pt-5 container d-flex justify-content-center">
     {{ $posts->links() }}
 </div>
 @endsection

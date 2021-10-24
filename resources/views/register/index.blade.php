@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="row justify-content-center mt-5">
+<div class="row justify-content-center mt-4" style="min-height: 68vh">
   <div class="col-lg-5">
     <main class=" form-registration">
       <h1 class="h3 mb-3 fw-normal text-center">Register Account</h1>
@@ -53,10 +53,10 @@
         </div>
         <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">Register</button>
         <small class="d-block text-center mt-2 mb-3">
-          Already registered ?<a href="/register">Login</a>
+          Already registered ?<a href="/login">Login</a>
         </small>
       </form>
-      <p class="mt-2 mb-3 text-muted text-center">&copy; WPU Blog, 2021</p>
+      <p class="mt-2 mb-3 text-muted text-center">&copy; Blogarithm, 2021</p>
     </main>
   </div>
 </div>

@@ -34,7 +34,7 @@
     <div class="mb-3">
       <label for="category" class="form-label">Category</label>
       <select class="form-select @error('category_id') is-invalid  @enderror" name="category_id" id="category">
-        <option disabled selected>---Select Category---</option>
+        <option disabled selected class="bg-light">---Select Category---</option>
         @foreach ($categories as $category)
         @if ( $category->id == old('category_id'))
         <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
@@ -42,6 +42,7 @@
         <option value="{{ $category->id }}">{{ $category->name }}</option>
         @endif
         @endforeach
+        <option disabled class="bg-light">Add New Category ? Contact Admin</option>
       </select>
       @error('category_id')
       <div class=" invalid-feedback">
